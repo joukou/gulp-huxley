@@ -14,6 +14,7 @@ In your `gulpfile.js`:
       huxley({
         port: 8000,
         huxleyGlob: 'test'
+        root: __dirname
       });
     });
 
