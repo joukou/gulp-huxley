@@ -1,0 +1,17 @@
+{
+  "name": "gulp-huxley",
+  "version": "0.0.0",
+  "description": "Gulp task for node-huxley.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "gulpjs",
+    "huxley",
+    "node-huxley"
+  ],
+  "author": "Rowan Crawford",
+  "license": "ISC"
+}
