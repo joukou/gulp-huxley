@@ -12,7 +12,11 @@
     "huxley",
     "node-huxley"
   ],
-  "author": "Rowan Crawford",
+  "author": "Rowan Crawford <wombleton@gmail.com>",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/joukou/gulp-huxley"
+  },
   "license": "BSD-3-Clause",
   "dependencies": {
     "huxley": "^0.7.3",

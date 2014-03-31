@@ -17,6 +17,11 @@ In your `gulpfile.js`:
       });
     });
 
+Contributors
+============
+
+Rowan Crawford (wombleton@gmail.com)
+
 License
 =======
 
