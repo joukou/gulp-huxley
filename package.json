@@ -14,8 +14,8 @@
   ],
   "author": "Rowan Crawford <wombleton@gmail.com>",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/joukou/gulp-huxley"
+    "type": "git",
+    "url": "https://github.com/joukou/gulp-huxley"
   },
   "license": "BSD-3-Clause",
   "dependencies": {
