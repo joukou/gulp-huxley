@@ -13,7 +13,7 @@ In your `gulpfile.js`:
     gulp.task( 'huxley', function() {
       huxley({
         port: 8000,
-        huxleyGlob: 'test'
+        paths: 'test'
         root: __dirname
       });
     });

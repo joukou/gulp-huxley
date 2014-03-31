@@ -3,7 +3,8 @@ var gulp = require( 'gulp' ),
 
 gulp.task( 'test', function() {
   huxley({
-    root: './'
+    root: './',
+    paths: 'test' // paths to `Huxleyfile.json`s
   });
 });
 

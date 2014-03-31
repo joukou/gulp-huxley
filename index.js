@@ -10,7 +10,12 @@ module.exports = function( options, cb ) {
   var server,
       root = options.root || '../..',
       port = options.port || 8000,
-      huxleyGlob = options.huxleyGlob || '';
+      paths = options.paths,
+      completed = 0;
+
+  if ( !Array.isArray( paths ) ) {
+    paths = [ paths ];
+  }
 
   server = httpServer.createServer({
     root: root
@@ -23,10 +28,14 @@ module.exports = function( options, cb ) {
       } );
       selenium.start();
       // Use defaults, code doesn't allow varargs unfortunately
-      huxley.playbackTasksAndCompareScreenshots( '', '', huxleyGlob, function( err ) {
-        selenium.stop();
-        server.close();
-        cb( err );
+      huxley.playbackTasksAndCompareScreenshots( '', '', paths, function( err ) {
+        completed++;
+
+        if ( completed === paths.length ) {
+          selenium.stop();
+          server.close();
+          cb( err );
+        }
       });
     } catch (e) {
       cb( e );
