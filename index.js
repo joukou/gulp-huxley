@@ -7,9 +7,14 @@ module.exports = function( options, cb ) {
   options = options || {};
   cb = cb || function() {};
 
-  var server = httpServer.createServer(),
+  var server,
+      root = options.root || '../..',
       port = options.port || 8000,
       huxleyGlob = options.huxleyGlob || '';
+
+  server = httpServer.createServer({
+    root: root
+  });
 
   server.listen(port, function() {
     try {

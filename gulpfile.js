@@ -2,7 +2,9 @@ var gulp = require( 'gulp' ),
     huxley = require( './index' );
 
 gulp.task( 'test', function() {
-  huxley();
+  huxley({
+    root: './'
+  });
 });
 
 gulp.task( 'default', [ 'test' ] );
