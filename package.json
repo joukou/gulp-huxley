@@ -1,6 +1,6 @@
 {
   "name": "gulp-huxley",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Gulp task for node-huxley.",
   "main": "index.js",
   "scripts": {
