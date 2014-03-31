@@ -1,4 +1,4 @@
-Copyright (c) 2013, Joukou Ltd
+Copyright (c) 2014, Joukou Ltd.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
