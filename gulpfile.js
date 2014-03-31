@@ -4,3 +4,5 @@ var gulp = require( 'gulp' ),
 gulp.task( 'test', function() {
   huxley();
 });
+
+gulp.task( 'default', [ 'test' ] );
