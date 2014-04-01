@@ -2,10 +2,10 @@ var gulp = require( 'gulp' ),
     huxley = require( './index' );
 
 gulp.task( 'test', function() {
-  huxley({
-    root: './',
-    paths: 'test' // paths to `Huxleyfile.json`s
-  });
+  gulp.src('test')
+    .pipe( huxley( {
+      root: __dirname
+    } ) );
 });
 
 gulp.task( 'default', [ 'test' ] );

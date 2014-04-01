@@ -25,6 +25,7 @@
     "selenium-server-standalone-jar": "^2.40.0"
   },
   "devDependencies": {
-    "gulp": "^3.6.0"
+    "gulp": "^3.6.0",
+    "through2": "^0.4.1"
   }
 }
