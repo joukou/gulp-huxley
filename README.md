@@ -21,7 +21,7 @@ In your `gulpfile.js`:
 Contributors
 ============
 
-Rowan Crawford (wombleton@gmail.com)
+Rowan Crawford (rowan@joukou.co)
 
 License
 =======

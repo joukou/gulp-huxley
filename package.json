@@ -12,7 +12,7 @@
     "huxley",
     "node-huxley"
   ],
-  "author": "Rowan Crawford <wombleton@gmail.com>",
+  "author": "Rowan Crawford <rowan@joukou.co>",
   "repository": {
     "type": "git",
     "url": "https://github.com/joukou/gulp-huxley"
