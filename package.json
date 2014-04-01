@@ -1,6 +1,6 @@
 {
   "name": "gulp-huxley",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp task for node-huxley.",
   "main": "index.js",
   "scripts": {
@@ -22,10 +22,10 @@
     "huxley": "^0.7.3",
     "http-server": "^0.6.1",
     "selenium-webdriver": "^2.41.0",
-    "selenium-server-standalone-jar": "^2.40.0"
+    "selenium-server-standalone-jar": "^2.40.0",
+    "through2": "^0.4.1"
   },
   "devDependencies": {
-    "gulp": "^3.6.0",
-    "through2": "^0.4.1"
+    "gulp": "^3.6.0"
   }
 }
