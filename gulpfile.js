@@ -1,11 +1,30 @@
 var gulp = require( 'gulp' ),
-    huxley = require( './index' );
+    gutil = require('gulp-util'),
+    huxley = require( './index' ),
+    SeleniumServer = require('selenium-webdriver/remote').SeleniumServer,
+    jar = require('selenium-server-standalone-jar'),
+    HttpServer = require('http-server');
 
-gulp.task( 'test', function() {
-  gulp.src('test')
+var selenium = null;
+
+gulp.task('http', function() {
+    HttpServer.createServer().listen(8000);
+});
+
+gulp.task('selenium', function() {
+    selenium = new SeleniumServer(jar.path, {
+        port: 4444
+    });
+    selenium.start();
+});
+
+gulp.task( 'test', ['selenium'], function() {
+  gulp.src('./test/**/Huxleyfile.json')
     .pipe( huxley( {
-      root: __dirname
+        action: 'record',
+        browser: 'chrome',
+        server: selenium.address()
     } ) );
 });
 
-gulp.task( 'default', [ 'test' ] );
+gulp.task( 'default', [ 'http', 'test' ] );

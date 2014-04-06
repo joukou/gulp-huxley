@@ -1,38 +1,48 @@
-var httpServer = require( 'http-server' ),
-    remote = require( 'selenium-webdriver/remote' ),
-    jar = require( 'selenium-server-standalone-jar' ),
-    huxley = require( 'huxley' ),
-    through = require( 'through2' );
+var huxley = require( 'huxley' ),
+    through = require( 'through2' ),
+    path = require( 'path' ),
+    gutil = require( 'gulp-util' );
 
 module.exports = function( options ) {
   options = options || {};
 
-  var server,
-      root = options.root || '../..',
-      port = options.port || 8000;
+  var browser = options.browser,
+      serverUrl = options.server,
+      driver = options.driver,
+      action = null,
+      paths = [];
 
-  server = httpServer.createServer({
-    root: root
-  });
+  if (typeof driver === 'function') {
+    huxley.injectDriver(options.driver);
+  }
+
+  switch( options.action ) {
+    case 'record':
+      action = huxley.recordTasks;
+      break;
+    case 'update':
+      action = huxley.playbackTasksAndSaveScreenshots;
+      break;
+    default:
+      action = huxley.playbackTasksAndCompareScreenshots;
+  }
 
   return through.obj( function( file, enc, callback ) {
-    server.listen( port, '', function() {
-      try {
-        var selenium = new remote.SeleniumServer( jar.path, {
-          port: 4444
-        } );
-        selenium.start();
-        // Use defaults, code doesn't allow varargs unfortunately
-        huxley.playbackTasksAndCompareScreenshots( '', '', [ file.path ], function( err ) {
-          selenium.stop();
-          server.close();
-          callback( err );
-        });
-      } catch (e) {
-        selenium.stop();
-        server.close();
-        callback( e );
-      }
-    });
+    paths.push( path.dirname( file.path ) );
+    this.push( file );
+    callback();
+  }, function( callback ) {
+    try {
+      action( browser, serverUrl, paths, function( err ) {
+        if ( err ) {
+          gutil.log( err );
+        }
+      });
+    } catch ( err ) {
+      this.emit( 'error', new gutil.PluginError('gulp-huxley', {
+        message: err
+      }));
+    }
+    callback();
   } );
 };
