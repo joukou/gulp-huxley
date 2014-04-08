@@ -20,9 +20,6 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "huxley": "^0.7.3",
-    "http-server": "^0.6.1",
-    "selenium-webdriver": "^2.41.0",
-    "selenium-server-standalone-jar": "^2.40.0",
     "through2": "^0.4.1",
     "gulp-util": "^2.2.14"
   },

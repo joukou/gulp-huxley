@@ -11,17 +11,19 @@ See the test for a working example.
 In your `gulpfile.js`:
 
     gulp.task( 'huxley', function() {
-      huxley({
-        port: 8000,
-        paths: 'test'
-        root: __dirname
-      });
-    });
+      gulp.src( './test/**/Huxleyfile.json' )
+        .pipe( huxley( {
+          action: 'compare'
+          browser: 'firefox',
+          server: 'http://localhost:4444/wd/hub'
+        } ) );
+    } );
 
 Contributors
 ============
 
 Rowan Crawford (rowan@joukou.co)
+Tony Gaskell (github.com/thgaskell)
 
 License
 =======
