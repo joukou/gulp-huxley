@@ -1,30 +1,22 @@
 var gulp = require( 'gulp' ),
-    gutil = require('gulp-util'),
-    huxley = require( './index' ),
-    SeleniumServer = require('selenium-webdriver/remote').SeleniumServer,
-    jar = require('selenium-server-standalone-jar'),
-    HttpServer = require('http-server');
+    huxley = require( './index' );
 
-var selenium = null;
+/**
+* To run the tests:
+* * `npm install`
+* * `npm install -g selenium-server http-server`
+* * `selenium -r`
+* * `http-server -p 8000` in the root of the project
+* * `gulp`
+*
+* This will be improved when gulp-selenium and gulp-httpserver are aavailable.
+*/
 
-gulp.task('http', function() {
-    HttpServer.createServer().listen(8000);
-});
-
-gulp.task('selenium', function() {
-    selenium = new SeleniumServer(jar.path, {
-        port: 4444
-    });
-    selenium.start();
-});
-
-gulp.task( 'test', ['selenium'], function() {
-  gulp.src('./test/**/Huxleyfile.json')
+gulp.task( 'test', function() {
+  gulp.src( './test/**/Huxleyfile.json' )
     .pipe( huxley( {
-        action: 'record',
-        browser: 'chrome',
-        server: selenium.address()
+      action: 'compare'
     } ) );
 });
 
-gulp.task( 'default', [ 'http', 'test' ] );
+gulp.task( 'default', [ 'test' ] );
