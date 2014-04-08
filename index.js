@@ -12,8 +12,8 @@ module.exports = function( options ) {
       action = null,
       paths = [];
 
-  if (typeof driver === 'function') {
-    huxley.injectDriver(options.driver);
+  if ( typeof driver === 'function' ) {
+    huxley.injectDriver( options.driver );
   }
 
   switch( options.action ) {
@@ -23,7 +23,7 @@ module.exports = function( options ) {
     case 'update':
       action = huxley.playbackTasksAndSaveScreenshots;
       break;
-    default:
+    default: // case 'compare'
       action = huxley.playbackTasksAndCompareScreenshots;
   }
 
@@ -39,9 +39,9 @@ module.exports = function( options ) {
         }
       });
     } catch ( err ) {
-      this.emit( 'error', new gutil.PluginError('gulp-huxley', {
+      this.emit( 'error', new gutil.PluginError( 'gulp-huxley', {
         message: err
-      }));
+      } ) );
     }
     callback();
   } );
