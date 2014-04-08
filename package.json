@@ -10,7 +10,8 @@
     "gulp",
     "gulpjs",
     "huxley",
-    "node-huxley"
+    "node-huxley",
+    "gulpplugin"
   ],
   "author": "Rowan Crawford <rowan@joukou.co>",
   "repository": {
