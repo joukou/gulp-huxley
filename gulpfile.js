@@ -18,11 +18,11 @@ gulp.task( 'selenium', function() {
 
 gulp.task( 'test', [ 'selenium' ], function() {
   gulp.src( './test/**/Huxleyfile.json' )
-  .pipe( huxley( {
-    action: 'record',
-    browser: 'chrome',
-    server: selenium.address()
-  } ) );
+    .pipe( huxley( {
+      action: 'record',
+      browser: 'chrome',
+      server: selenium.address()
+    } ) );
 });
 
 gulp.task( 'default', [ 'http', 'test' ] );
