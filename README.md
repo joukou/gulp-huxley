@@ -24,8 +24,9 @@ In your `gulpfile.js`:
 Contributors
 ============
 
-Rowan Crawford (rowan@joukou.co)
-Tony Gaskell (github.com/thgaskell)
+- [Rowan Crawford](mailto:rowan@joukou.com)
+- [Tony Gaskell](https://github.com/thgaskell)
+- [Joukou Ltd](https://joukou.com)
 
 License
 =======
