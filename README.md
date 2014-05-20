@@ -2,6 +2,7 @@ gulp-huxley
 ===========
 [![NPM version](https://badge.fury.io/js/gulp-huxley.svg)](http://badge.fury.io/js/gulp-huxley)
 ![Dependencies](https://david-dm.org/joukou/gulp-huxley.png)
+[![BSD-3-Clause](http://img.shields.io/badge/license-BSD--3--Clause-brightgreen.png)](#license)
 
 A gulp plugin to run huxley tests.
 
