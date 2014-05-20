@@ -12,14 +12,16 @@ See the test for a working example.
 
 In your `gulpfile.js`:
 
-    gulp.task( 'huxley', function() {
-      gulp.src( './test/**/Huxleyfile.json' )
-        .pipe( huxley( {
-          action: 'compare'
-          browser: 'firefox',
-          server: 'http://localhost:4444/wd/hub'
-        } ) );
-    } );
+```javascript
+gulp.task( 'huxley', function() {
+  gulp.src( './test/**/Huxleyfile.json' )
+    .pipe( huxley( {
+      action: 'compare'
+      browser: 'firefox',
+      server: 'http://localhost:4444/wd/hub'
+    } ) );
+} );
+```
 
 Contributors
 ============
