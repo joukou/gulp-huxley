@@ -1,8 +1,8 @@
-[![Stories in Ready](https://badge.waffle.io/joukou/gulp-huxley.png?label=ready&title=Ready)](https://waffle.io/joukou/gulp-huxley)
 gulp-huxley
 ===========
+[![Stories in Ready](https://badge.waffle.io/joukou/gulp-huxley.png?label=ready&title=Ready)](https://waffle.io/joukou/gulp-huxley)
 [![NPM version](https://badge.fury.io/js/gulp-huxley.svg)](http://badge.fury.io/js/gulp-huxley)
-![Dependencies](https://david-dm.org/joukou/gulp-huxley.png)
+![Dependencies](https://david-dm.org/joukou/gulp-huxley.png) 
 [![BSD-3-Clause](http://img.shields.io/badge/license-BSD--3--Clause-brightgreen.png)](#license)
 
 A gulp plugin to run huxley tests.
