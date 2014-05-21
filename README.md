@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/joukou/gulp-huxley.png?label=ready&title=Ready)](https://waffle.io/joukou/gulp-huxley)
 gulp-huxley
 ===========
 [![NPM version](https://badge.fury.io/js/gulp-huxley.svg)](http://badge.fury.io/js/gulp-huxley)
