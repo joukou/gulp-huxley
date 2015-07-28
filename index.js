@@ -9,10 +9,6 @@ module.exports = function( options ) {
 
   var action = null;
 
-  if ( typeof options.driver === 'function' ) {
-    huxley.injectDriver( options.driver );
-  }
-
   switch( options.action ) {
     case 'record':
       action = huxley.recordTasks;
