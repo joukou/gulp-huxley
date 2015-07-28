@@ -20,11 +20,11 @@
   },
   "license": "BSD-3-Clause",
   "dependencies": {
-    "huxley": "^0.7.3",
-    "through2": "^0.4.1",
-    "gulp-util": "^2.2.14"
+    "huxley": "^0.8.x",
+    "through2": "^2.0.0",
+    "gulp-util": "^3.0.6"
   },
   "devDependencies": {
-    "gulp": "^3.6.0"
+    "gulp": "^3.9.0"
   }
 }
