@@ -18,13 +18,19 @@ In your `gulpfile.js`:
 ```javascript
 gulp.task( 'huxley', function() {
   gulp.src( './test/**/Huxleyfile.json' )
-    .pipe( huxley( {
-      action: 'compare'
-      browser: 'firefox',
-      server: 'http://localhost:4444/wd/hub'
-    } ) );
-} );
+    .pipe(huxley(options));
+});
 ```
+
+Options
+=======
+Option | Type   | Default | Description
+------ | ----   | ------- | -----------
+action | string | 'compare' | 'default', 'record', 'update' or 'compare'
+browserName | string | 'firefox' | 'firefox' (selenium) or 'chrome' (chromedriver)
+serverUrl | string | | see [Advanced Usage](https://github.com/chenglou/node-huxley/wiki/Advanced-usage) for a detailed Description
+injectedDriver | function | | see [Huxley API](https://github.com/chenglou/node-huxley/wiki/API) for a detailed Description  
+
 
 Contributors
 ============

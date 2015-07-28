@@ -15,13 +15,16 @@ module.exports = function( options ) {
 
   switch( options.action ) {
     case 'record':
-    action = huxley.recordTasks;
-    break;
+      action = huxley.recordTasks;
+      break;
     case 'update':
-    action = huxley.writeScreenshots;
-    break;
-    default: // case 'compare'
-    action = huxley.compareScreenshots;
+      action = huxley.writeScreenshots;
+      break;
+    case 'compare':
+      action = huxley.compareScreenshots;
+      break;
+    default: // case 'default'
+      action = huxley.defaultWorkflow;
   }
 
   return through.obj( function( file, enc, callback ) {
