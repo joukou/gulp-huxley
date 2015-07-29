@@ -12,11 +12,21 @@ var gulp = require( 'gulp' ),
 * This will be improved when gulp-selenium and gulp-httpserver are aavailable.
 */
 
+gulp.task( 'record', function() {
+  gulp.src( './test/**/Huxleyfile.json' )
+    .pipe( huxley({
+      action: 'record'
+    }))
+    .pipe( huxley({
+      action: 'update'
+    }));;
+});
+
 gulp.task( 'test', function() {
   gulp.src( './test/**/Huxleyfile.json' )
-    .pipe( huxley( {
+    .pipe( huxley({
       action: 'compare'
-    } ) );
+    }));
 });
 
 gulp.task( 'default', [ 'test' ] );
